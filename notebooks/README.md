@@ -5,6 +5,7 @@
 | [Plain ResNet-50](baselines/Baseline_Resnet__IDSE__2_.ipynb) | ImageNet-pretrained baseline used as the first step of the imbalance ladder. |
 | [EfficientNet-B0](baselines/skin_lesion_efficientnet.ipynb) | Class-weighted EfficientNet-B0 baseline. |
 | [Keras custom CNN](baselines/DenseNet121_HAM10000_Baseline.ipynb) | The saved model is a Keras custom CNN. The file keeps its original name. |
+| [PyTorch CustomCNN](baselines/base0%20%282%29.ipynb) | Custom convolutional baseline with saved test accuracy 0.5236 and macro-F1 0.3757. |
 | [ResNet-50 class weights](resnet50_imbalance/HAM10000_ResNet50_ClassWeights__1_.ipynb) | Weighted-training code. The saved output is a dry run. The full-run score appears in the v3 and v4 comparison tables. |
 | [ResNet-50 resampling and deduplication](resnet50_imbalance/v3_HAM10000_ResNet50_Resampling__1_.ipynb) | Training-only deduplication and per-epoch resampling. |
 | [ResNet-50 v4](resnet50_imbalance/v4-seed42.ipynb) | Full recipe with the four seed scores, validation-fitted offsets, and the ensemble result. |
@@ -12,16 +13,17 @@
 | [Swin-T and shared-recipe TransNet](complex_models/HAM10000_v5_reference_swin_transnet.ipynb) | Training code for both backbone comparisons. |
 | [EfficientNet-B3 + Swin-T hybrid](complex_models/HAM10000_Hybrid_EfficientNetB3_SwinTiny_MacroF1.ipynb) | Feature fusion with raw and validation-offset results. |
 | [Mixup and CutMix experiments](complex_models/HAM10000_v6_boost.ipynb) | Training and inference variants discussed among the unsuccessful experiments. |
+| [Metadata fusion](complex_models/skin_lesion_efficientnet_class_imbalance%20%282%29.ipynb) | EfficientNet ensemble with image and metadata inputs, evaluated in the unsuccessful variants. |
 | [Grad-CAM and error analysis](gradcam_error_analysis.ipynb) | Grad-CAM, Grad-CAM++, error selection, and gallery generation for the selected ConvNeXt-Tiny run. |
 
 The seed-42 paper-recipe TransNet run uses [train_transnet.py](../scripts/train_transnet.py). Set `DATA_DIR`, `SPLIT_DIR`, and `OUT_DIR` in the script for your machine. For a local run, set `COLAB = False` and run `python scripts/train_transnet.py` from the repository root.
 
-The PyTorch CustomCNN training notebook, metadata-fusion notebook, and source notebook for the older paper-recipe TransNet run are pending. The older TransNet results are available in [the saved results](../results/README.md).
+The older paper-recipe TransNet run is represented by its [saved results JSON](../results/results_FULL.json). Its training notebook is pending.
 
 ## Running on Colab
 
 1. Download HAM10000 and arrange the files as described in the [data instructions](../data/README.md). Set `DATA_DIR` to the folder containing `HAM10000_metadata.csv` and the two image folders.
-2. Set `SPLIT_DIR` to the folder containing the original lesion-grouped split files. The notebooks expect `train_split.csv`, `val_split.csv`, and `test_split.csv`. If your copies use the shorter names `train.csv`, `val.csv`, and `test.csv`, rename them for the notebook while preserving their row order. Leave `RUN_REGROUP` disabled when reproducing the reported training run.
+2. Set `SPLIT_DIR` to the directory containing the [original split files](../data/splits/). Some notebooks read the splits alongside the images and metadata. Keep the filenames and row order. Leave `RUN_REGROUP` disabled when reproducing the reported training run.
 3. Set `OUT_DIR` to a writable experiment folder. The training notebook writes its checkpoint, results, and prediction arrays there. Use a GPU runtime for the full training run.
 4. For the Grad-CAM notebook, place the selected `best_v5_convnext_tiny224*seed42.pth` checkpoint in `OUT_DIR`. Copy the [saved prediction archive](../results/convnext_tiny_v5_probs.npz) there as `probs_v5_convnext_tiny224_seed42.npz` so its filename matches the notebook's glob. Use the original test split in the same order as the saved prediction rows. Set `GRADCAM_DIR` to a writable folder for generated figures.
 

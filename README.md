@@ -26,7 +26,7 @@ python results/recompute.py
 
 This recalculates metrics from the saved predictions, including the selected model's class-level results and calibration. Follow the [results instructions](results/README.md) to regenerate the confusion matrix, reliability diagram, and coverage curve. This check uses saved predictions and runs without the raw images or the model checkpoint.
 
-The [notebook index](notebooks/README.md) lists the included experiments and remaining source files. The original lesion-grouped split CSVs are still needed to rerun training on the reported split. See the [dataset guide](data/README.md) for data setup.
+The [notebook index](notebooks/README.md) lists the included experiments. The original lesion-grouped split CSVs are in [data/splits](data/splits/). See the [dataset guide](data/README.md) for data setup.
 
 ## Web demo
 

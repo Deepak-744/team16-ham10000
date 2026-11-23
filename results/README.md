@@ -10,7 +10,7 @@
 | `results_FULL.json` | Earlier TransNet paper-recipe run with recorded aggregate results |
 | `figures/` | ConvNeXt test confusion matrix, reliability diagram, and confidence coverage curve from the final report |
 
-The NumPy archives contain `val_probs`, `val_y`, `test_probs`, and `test_y`. They hold 1,008 validation rows and 1,016 test rows. The probability columns and integer class labels follow this order: `akiec`, `bcc`, `bkl`, `df`, `mel`, `nv`, `vasc`. The labels are paired with scores by row. Image and lesion IDs are absent from the archives, so matching a row to an image requires the original split files in evaluation order.
+The NumPy archives contain `val_probs`, `val_y`, `test_probs`, and `test_y`. They hold 1,008 validation rows and 1,016 test rows. The probability columns and integer class labels follow this order: `akiec`, `bcc`, `bkl`, `df`, `mel`, `nv`, `vasc`. The label sequences match the corresponding rows in the [original split files](../data/splits/), which provide the image and lesion IDs.
 
 ## Recompute the metrics
 

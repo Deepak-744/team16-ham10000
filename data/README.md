@@ -6,6 +6,6 @@ For the included Colab notebooks, extract the archives into distinct image folde
 
 ## Project splits
 
-The report uses lesion-grouped partitions of 7,991 training images, 1,008 validation images, and 1,016 test images before the training-only near-duplicate removal. The original project CSVs are pending. The submission layout reserves `data/splits/train.csv`, `data/splits/val.csv`, and `data/splits/test.csv` for those manifests. The Colab notebooks expect `train_split.csv`, `val_split.csv`, and `test_split.csv` inside their configured split directory.
+The original project manifests are [train_split.csv](splits/train_split.csv), [val_split.csv](splits/val_split.csv), and [test_split.csv](splits/test_split.csv). They contain 7,991 training images, 1,008 validation images, and 1,016 test images before training-only near-duplicate removal. There are no shared lesion or image IDs across the three partitions.
 
-Preserve the original `image_id`, `lesion_id`, labels, and row order. The saved prediction arrays contain labels and class scores, so they can reproduce the metrics without the images. Pairing an array row with a particular image for Grad-CAM requires the original split order.
+Point each notebook's split-directory setting at `data/splits/` or copy these files to the expected location in Colab. Keep their original row order. The validation and test class labels match the labels in the saved prediction arrays row by row.
