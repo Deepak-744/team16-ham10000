@@ -7,7 +7,7 @@
 | `swin_t_v5_results.json`, `swin_t_v5_probs.npz` | Swin-T comparison |
 | `transnet_shared_recipe_v5_results.json`, `transnet_shared_recipe_v5_probs.npz` | TransNet with the shared training recipe |
 | `results_transnet_ep42_seed42.json`, `probs_transnet_ep42_seed42.npz` | Seed-42 TransNet paper-recipe reproduction |
-| `results_FULL.json` | Earlier TransNet paper-recipe run with recorded aggregate results |
+| `results_FULL.json` | Earlier TransNet paper-recipe run with recorded aggregate results. The [Colab notebook](../notebooks/complex_models/transnet_colab_fixed_v4.ipynb) includes its full-run export. |
 | `figures/` | ConvNeXt test confusion matrix, reliability diagram, and confidence coverage curve from the final report |
 
 The NumPy archives contain `val_probs`, `val_y`, `test_probs`, and `test_y`. They hold 1,008 validation rows and 1,016 test rows. The probability columns and integer class labels follow this order: `akiec`, `bcc`, `bkl`, `df`, `mel`, `nv`, `vasc`. The label sequences match the corresponding rows in the [original split files](../data/splits/), which provide the image and lesion IDs.

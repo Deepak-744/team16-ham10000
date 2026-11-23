@@ -11,14 +11,13 @@
 | [ResNet-50 v4](resnet50_imbalance/v4-seed42.ipynb) | Full recipe with the four seed scores, validation-fitted offsets, and the ensemble result. |
 | [ConvNeXt-Tiny v5 and EfficientNet-B3](convnext_tiny_v5/convnext_tiny_v5.ipynb) | Shared training notebook. The saved selection is the final ConvNeXt-Tiny experiment. The EfficientNet-B3 preset uses its own saved evaluation files. |
 | [Swin-T and shared-recipe TransNet](complex_models/HAM10000_v5_reference_swin_transnet.ipynb) | Training code for both backbone comparisons. |
+| [Older paper-recipe TransNet](complex_models/transnet_colab_fixed_v4.ipynb) | Colab notebook configured for the 42-epoch run. Its full-run export matches the filename and structure of the [saved results](../results/results_FULL.json). |
 | [EfficientNet-B3 + Swin-T hybrid](complex_models/HAM10000_Hybrid_EfficientNetB3_SwinTiny_MacroF1.ipynb) | Feature fusion with raw and validation-offset results. |
 | [Mixup and CutMix experiments](complex_models/HAM10000_v6_boost.ipynb) | Training and inference variants discussed among the unsuccessful experiments. |
 | [Metadata fusion](complex_models/skin_lesion_efficientnet_class_imbalance%20%282%29.ipynb) | EfficientNet ensemble with image and metadata inputs, evaluated in the unsuccessful variants. |
 | [Grad-CAM and error analysis](gradcam_error_analysis.ipynb) | Grad-CAM, Grad-CAM++, error selection, and gallery generation for the selected ConvNeXt-Tiny run. |
 
 The seed-42 paper-recipe TransNet run uses [train_transnet.py](../scripts/train_transnet.py). Set `DATA_DIR`, `SPLIT_DIR`, and `OUT_DIR` in the script for your machine. For a local run, set `COLAB = False` and run `python scripts/train_transnet.py` from the repository root.
-
-The older paper-recipe TransNet run is represented by its [saved results JSON](../results/results_FULL.json). Its training notebook is pending.
 
 ## Running on Colab
 
