@@ -26,7 +26,7 @@ python results/recompute.py
 
 This recalculates metrics from the saved predictions, including the selected model's class-level results and calibration. Follow the [results instructions](results/README.md) to regenerate the confusion matrix, reliability diagram, and coverage curve. This check uses saved predictions and runs without the raw images or the model checkpoint.
 
-The original lesion-grouped split CSVs, the remaining baseline and comparison notebooks, and the training script for the TransNet paper-recipe run are pending. The report documents those experiments and the available TransNet outputs are included. The [dataset guide](data/README.md) distinguishes the project's split from the dataset download.
+The [notebook index](notebooks/README.md) lists the included experiments and remaining source files. The original lesion-grouped split CSVs are still needed to rerun training on the reported split. See the [dataset guide](data/README.md) for data setup.
 
 ## Web demo
 
