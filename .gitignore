@@ -1,0 +1,42 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+node_modules/
+dist/
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+# Downloaded dataset and checkpoints
+/data/raw/
+/data/HAM10000_metadata.csv
+/data/HAM10000_images_part_*/
+*.pth
+*.pth.zip
+*.pt
+*.h5
+*.keras
+*.onnx
+
+# Generated evaluation, report, and demo files
+/results/generated/
+/webapp/sample_images/
+/webapp/backend/models/
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
